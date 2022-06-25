@@ -8,14 +8,14 @@ export const initWSServer = (port: number) => {
   wsServer.on('connection', (ws: WebSocket) => {
     const duplex = createWebSocketStream(ws, { encoding: 'utf8', decodeStrings: false });
 
-    duplex.on('readable', () => {
+    duplex.on('readable', async () => {
       let msg = '';
       const chunk = duplex.read();
       if (chunk) {
         msg += chunk;
       }
-      commandsController(msg);
-      console.log(msg);
+      const res = await commandsController(msg);
+      msg = res ? `${msg} ${res}\0` : `${msg}\0`;
       duplex.write(msg);
     });
   });
