@@ -11,3 +11,11 @@ export const COMMANDS = {
 };
 
 export const DEFAULT_IMG_SIZE = 200;
+
+export const INFO_MSGS = {
+  WS_CONNECTED: 'WebSocket connection established\nDuplex stream created',
+  WS_CLOSED: 'WebSocket connection closed',
+  WS_ERROR: 'WebSocket server error occurred',
+  STREAM_CLOSED: 'Duplex stream closed',
+  STREAM_ERROR: 'Error occurred during data processing',
+};

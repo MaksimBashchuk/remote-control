@@ -6,47 +6,60 @@ import {
   handleMousePosition,
   handlePrintScreen,
 } from '../handlers';
-import { parseArguments } from '../utils';
+import { logError, logSuccess, parseArguments } from '../utils';
 
 export const commandsController = async (msg: string) => {
-  console.log(msg);
   const [command, arg1, arg2] = parseArguments(msg);
-  switch (command) {
-    case COMMANDS.MOUSE_POS:
-      return handleMousePosition();
+  try {
+    switch (command) {
+      case COMMANDS.MOUSE_POS:
+        handleMousePosition();
+        return logSuccess(command);
 
-    case COMMANDS.MOUSE_DOWN:
-      handleMouseMove(1, +arg1);
-      return;
+      case COMMANDS.MOUSE_DOWN:
+        handleMouseMove(1, +arg1);
+        logSuccess(command);
+        return;
 
-    case COMMANDS.MOUSE_UP:
-      handleMouseMove(1, -arg1);
-      return;
+      case COMMANDS.MOUSE_UP:
+        handleMouseMove(1, -arg1);
+        logSuccess(command);
+        return;
 
-    case COMMANDS.MOUSE_RIGHT:
-      handleMouseMove(+arg1, 1);
-      return;
+      case COMMANDS.MOUSE_RIGHT:
+        handleMouseMove(+arg1, 1);
+        logSuccess(command);
+        return;
 
-    case COMMANDS.MOUSE_LEFT:
-      handleMouseMove(-arg1, 1);
-      return;
+      case COMMANDS.MOUSE_LEFT:
+        handleMouseMove(-arg1, 1);
+        logSuccess(command);
+        return;
 
-    case COMMANDS.DRAW_RECT:
-      handleDrawRect(+arg1, +arg2);
-      return;
+      case COMMANDS.DRAW_RECT:
+        handleDrawRect(+arg1, +arg2);
+        logSuccess(command);
+        return;
 
-    case COMMANDS.DRAW_SQUARE:
-      handleDrawRect(+arg1, +arg1);
-      return;
+      case COMMANDS.DRAW_SQUARE:
+        handleDrawRect(+arg1, +arg1);
+        logSuccess(command);
+        return;
 
-    case COMMANDS.DRAW_CIRCLE:
-      handleDrawCircle(+arg1);
-      return;
+      case COMMANDS.DRAW_CIRCLE:
+        handleDrawCircle(+arg1);
+        logSuccess(command);
+        return;
 
-    case COMMANDS.PRINT_SCR:
-      return await handlePrintScreen();
+      case COMMANDS.PRINT_SCR:
+        const result = await handlePrintScreen();
+        logSuccess(command);
+        return result;
 
-    default:
-      break;
+      default:
+        break;
+    }
+  } catch {
+    logError(command);
   }
 };
