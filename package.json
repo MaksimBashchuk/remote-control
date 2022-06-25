@@ -4,7 +4,6 @@
   "description": "Template for the WebSocket remote control task",
   "main": "index.js",
   "scripts": {
-    "build": "webpack && node ./dist/bundle.js",
     "start": "nodemon ./src/index.ts"
   },
   "author": "Maksim Bashchuk",
@@ -21,11 +20,8 @@
     "eslint-plugin-prettier": "^4.0.0",
     "nodemon": "^2.0.16",
     "prettier": "^2.7.1",
-    "ts-loader": "^9.3.1",
     "ts-node": "^10.8.1",
-    "typescript": "^4.7.4",
-    "webpack": "^5.73.0",
-    "webpack-cli": "^4.10.0"
+    "typescript": "^4.7.4"
   },
   "dependencies": {
     "jimp": "^0.16.1",
