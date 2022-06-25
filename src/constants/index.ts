@@ -9,3 +9,5 @@ export const COMMANDS = {
   MOUSE_RIGHT: 'mouse_right',
   MOUSE_LEFT: 'mouse_left',
 };
+
+export const DEFAULT_IMG_SIZE = 200;
