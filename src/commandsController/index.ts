@@ -6,7 +6,7 @@ import {
   handleMousePosition,
   handlePrintScreen,
 } from '../handlers';
-import { logError, logSuccess, parseArguments } from '../utils';
+import { logCommandError, logSuccess, parseArguments } from '../utils';
 
 export const commandsController = async (msg: string) => {
   const [command, arg1, arg2] = parseArguments(msg);
@@ -61,6 +61,6 @@ export const commandsController = async (msg: string) => {
         break;
     }
   } catch {
-    logError(command);
+    logCommandError(command);
   }
 };

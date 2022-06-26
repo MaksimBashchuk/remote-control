@@ -3,15 +3,20 @@ export const parseArguments = (str: string) => {
 };
 
 export const logReceivedCommand = (msg: string) => {
-  console.log(`Received command: ${msg}\n`);
+  console.log(`Received command: ${msg}`);
 };
 
 export const logSuccess = (command: string) => {
-  console.log(`\x1b[32mCommand ${command} was executed successfully\x1b[0m`);
+  console.log(`\x1b[32mCommand ${command} was executed successfully\x1b[0m\n`);
 };
 
-export const logError = (command: string) => {
-  console.error(`\x1b[31mCommand ${command} was failed\x1b[0m`);
+export const logError = (msg: string) => {
+  console.error(`\x1b[31m${msg}\x1b[0m\n`);
+};
+
+export const logCommandError = (command: string) => {
+  const msg = `Command ${command} was failed`;
+  logError(msg);
 };
 
 export const logInfo = (msg: string) => {
