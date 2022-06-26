@@ -13,8 +13,9 @@ export const commandsController = async (msg: string) => {
   try {
     switch (command) {
       case COMMANDS.MOUSE_POS:
-        handleMousePosition();
-        return logSuccess(command);
+        const res = handleMousePosition();
+        logSuccess(command);
+        return res;
 
       case COMMANDS.MOUSE_DOWN:
         handleMouseMove(1, +arg1);
