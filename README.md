@@ -20,8 +20,8 @@
 | ARROW_DOWN  | mouse_down     | Move mouse down                                                                 |
 | ARROW_LEFT  | mouse_left     | Move mouse left                                                                 |
 | ARROW_RIGHT | mouse_right    | Move mouse right                                                                |
-| P           | mouse_position | Return mouse coordinates                                                        |
-| C           | draw_circle    | Draw circle. Before using make browser window active                            |
-| R           | draw_rectangle | Draw rectangle. Before using make browser window active                         |
-| S           | draw_square    | Draw square. Before using make browser window active                            |
-| CTRL + P    | prnt_scrn      | Print 200x200 pixels segment of screen. Before using make browser window active |
+| p           | mouse_position | Return mouse coordinates                                                        |
+| c           | draw_circle    | Draw circle. Before using make browser window active                            |
+| r           | draw_rectangle | Draw rectangle. Before using make browser window active                         |
+| s           | draw_square    | Draw square. Before using make browser window active                            |
+| CTRL + p    | prnt_scrn      | Print 200x200 pixels segment of screen. Before using make browser window active |
